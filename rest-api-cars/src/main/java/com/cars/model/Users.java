@@ -1,16 +1,11 @@
 package com.cars.model;
 
-import java.util.List;
-import java.util.Map;
-
 public class Users {
 	
 	private int id;	
 	private String name;
 	private int age;
 	private String address;
-	
-	private List<Map<String,Cars>> listOwnedCars; 
 	
 	public Users() {		
 	}
@@ -45,14 +40,6 @@ public class Users {
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	public List<Map<String,Cars>> getListOwnedCars() {
-		return listOwnedCars;
-	}
-
-	public void setListOwnedCars(List<Map<String,Cars>> listOwnedCars) {
-		this.listOwnedCars = listOwnedCars;
 	}
 
 }
