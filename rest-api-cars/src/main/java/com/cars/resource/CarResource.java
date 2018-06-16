@@ -35,9 +35,9 @@ public class CarResource {
 	public ResponseEntity<Cars> getMuscleCar(@PathVariable("id") int id) {
 
 		try {
-			Cars muscleCar = carService.getCar(id);
-			if (muscleCar != null) {
-				return ResponseEntity.status(HttpStatus.OK).body(muscleCar);
+			Cars car = carService.getCar(id);
+			if (car != null) {
+				return ResponseEntity.status(HttpStatus.OK).body(car);
 			} else {
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 			}
@@ -61,10 +61,10 @@ public class CarResource {
 	}
 
 	@RequestMapping(value = "/cars/add", method = RequestMethod.POST)
-	public ResponseEntity<Void> addCarToList( @RequestBody Cars muscleCar) {
+	public ResponseEntity<Void> addCarToList( @RequestBody Cars car) {
 
 		try {
-			carService.addCarToList(muscleCar);
+			carService.addCarToList(car);
 			return ResponseEntity.status(HttpStatus.OK).build();
 		} catch (CarsException e) {
 			e.printStackTrace();
@@ -73,10 +73,10 @@ public class CarResource {
 	}
 
 	@RequestMapping(value = "/cars/update/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> updateCar(@PathVariable("id") int id, @RequestBody Cars muscleCar) {
+	public ResponseEntity<Void> updateCar(@PathVariable("id") int id, @RequestBody Cars car) {
 
 		try {
-			carService.updateCarFromList(id, muscleCar);
+			carService.updateCarFromList(id, car);
 			return ResponseEntity.status(HttpStatus.OK).build();
 		} catch(IllegalStateException e ) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

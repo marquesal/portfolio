@@ -42,7 +42,7 @@ public class UserResource {
 		}
 	}
 
-	@RequestMapping(value = "/user/cars/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/users/cars/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<Map<String, Object>>> listOwnedCars(@PathVariable("id") int id) {
 		
 		try {
