@@ -9,6 +9,6 @@ How to setup project:
 
 Examples of usage:
 - list of users with cars: http://localhost:8080/v1/api/users/cars/
-- owned cars by user with ID=4: http://localhost:8080/v1/api/user/cars/4
+- owned cars by user with ID=4: http://localhost:8080/v1/api/users/cars/4
 - list of all users: http://localhost:8080/v1/api/users
 - list of all cars: http://localhost:8080/v1/api/cars
