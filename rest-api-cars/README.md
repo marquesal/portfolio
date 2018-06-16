@@ -12,3 +12,5 @@ Examples of usage:
 - owned cars by user with ID=4: http://localhost:8080/v1/api/users/cars/4
 - list of all users: http://localhost:8080/v1/api/users
 - list of all cars: http://localhost:8080/v1/api/cars
+- delete user with ID=3: http://localhost:8080/v1/api/users/delete/3
+- delete car with ID=2: http://localhost:8080/v1/api/cars/delete/2
