@@ -48,7 +48,7 @@ public class CarResource {
 
 	}
 
-	@RequestMapping(value = "/cars/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/cars/delete/{id}", method = {RequestMethod.GET,RequestMethod.DELETE})
 	public String deleteMuscleCar(@PathVariable("id") int id) {
 
 		try {

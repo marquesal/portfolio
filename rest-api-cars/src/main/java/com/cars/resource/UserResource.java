@@ -70,7 +70,7 @@ public class UserResource {
 
 	}
 
-	@RequestMapping(value = "/users/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/users/delete/{id}", method = {RequestMethod.GET,RequestMethod.DELETE})
 	public String deleteUser(@PathVariable("id") int id) {
 
 		try {
