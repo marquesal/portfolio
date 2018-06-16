@@ -1,2 +1,2 @@
 # portfolio
-Used to plan, organize and showcase some education, work samples and skills. 
+Used to plan, organize and showcase educational assignments, work samples and skills. 
