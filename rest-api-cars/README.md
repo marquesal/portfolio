@@ -1,9 +1,11 @@
 # Spring Boot REST API
 
-1. - Create user "rest" password "rest" in prefered SQL DB or update DataSourceConfig.java 
-2. - Run cars_db.sql script to create tables and insert values
-3. - Run CarsApplication.java as Java Application (it will be publish to embeded Tomcat using Docker)
-4. - Access REST api in browser
+How to setup project:
+1. Create user "rest" password "rest" in prefered SQL DB or update DataSourceConfig.java 
+2. Run cars_db.sql script to create tables and insert values
+3. Import project folder to favorite IDE
+4. Run CarsApplication.java as Java Application (it will be publish to embeded Tomcat using Docker)
+5. Access REST API in browser
 
 Examples of usage:
 - list of users with cars: http://localhost:8080/v1/api/users/cars/
