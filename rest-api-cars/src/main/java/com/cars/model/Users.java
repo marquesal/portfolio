@@ -3,20 +3,13 @@ package com.cars.model;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.*;
-
-@Entity
 public class Users {
 	
-	@Id
-    @GeneratedValue
-	private int id;
-	
+	private int id;	
 	private String name;
 	private int age;
 	private String address;
 	
-	@OneToMany(mappedBy = "Users")
 	private List<Map<String,Cars>> listOwnedCars; 
 	
 	public Users() {		
