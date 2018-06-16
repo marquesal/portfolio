@@ -31,6 +31,17 @@ public class UserResource {
 		}
 	}
 
+	@RequestMapping(value = "/users/cars", method = RequestMethod.GET)
+	public ResponseEntity<List<Map<String, Object>>> listAllUsersCars() {
+		
+		try {
+			List<Map<String, Object>> result = userService.listUsersCars();
+			return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (IllegalStateException e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}
+	}
+
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Users> getMuscleUser(@PathVariable("id") int id) {
 

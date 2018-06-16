@@ -37,16 +37,16 @@ public class CarsDaoImpl extends JdbcDaoSupport implements CarsDao {
 	}
 
     @Override
-    public void addCarToList(Cars muscleCar) {
-        String sql = "insert into cars (car_brand, car_model, horsepower, car_engine) values (?, ?, ?, ?)";
-        Object[] args = new Object[] {muscleCar.getCarBrand(), muscleCar.getCarModel(), muscleCar.getHorsepower(), muscleCar.getCarEngine()};
+    public void addCarToList(Cars car) {
+        String sql = "insert into cars (car_brand, car_model, horsepower, car_engine, fk_users) values (?, ?, ?, ?, ?)";
+        Object[] args = new Object[] {car.getCarBrand(), car.getCarModel(), car.getHorsepower(), car.getCarEngine(), car.getOwner()};
         getJdbcTemplate().update(sql, args);
     }
 
     @Override
-    public void updateCarFromList(int id, Cars muscleCar) {
-        String sql = "update cars set car_brand = ?, car_model = ?, horsepower = ?, car_engine = ? where id = ?";
-        Object[] args = new Object[] {muscleCar.getCarBrand(), muscleCar.getCarModel(), muscleCar.getHorsepower(), muscleCar.getCarEngine(), id};
+    public void updateCarFromList(int id, Cars car) {
+        String sql = "update cars set car_brand = ?, car_model = ?, horsepower = ?, car_engine = ?, fk_users = ?, where id = ?";
+        Object[] args = new Object[] {car.getCarBrand(), car.getCarModel(), car.getHorsepower(), car.getCarEngine(), car.getOwner(), id};
         getJdbcTemplate().update(sql, args);
     }
 

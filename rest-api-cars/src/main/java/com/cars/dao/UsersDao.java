@@ -17,5 +17,7 @@ public interface UsersDao {
 	void updateUserFromList(int id, Users user);
 
 	List<Map<String, Object>> listAllUsers();
+	
+	List<Map<String, Object>> listUsersCars();
 
 }

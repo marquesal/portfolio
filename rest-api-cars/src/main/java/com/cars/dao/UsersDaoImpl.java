@@ -55,4 +55,10 @@ public class UsersDaoImpl extends JdbcDaoSupport implements UsersDao {
 		String sql = "select * from users";
 		return getJdbcTemplate().queryForList(sql);
 	}
+
+	@Override
+	public List<Map<String, Object>> listUsersCars() {
+		String sql = "select * from users inner join cars on users.id = cars.fk_users";
+		return getJdbcTemplate().queryForList(sql);
+	}
 }

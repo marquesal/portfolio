@@ -18,6 +18,7 @@ public class CarsRowMapper implements RowMapper<Cars> {
 		mc.setCarModel(rs.getString("car_model"));
 		mc.setCarEngine(rs.getString("car_engine"));
 		mc.setHorsepower(rs.getInt("horsepower"));
+		mc.setHorsepower(rs.getInt("owner"));
 		return mc;
 	}
 

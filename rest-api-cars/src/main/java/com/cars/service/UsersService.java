@@ -41,6 +41,16 @@ public class UsersService {
 			}
 	}
 
+	public List<Map<String, Object>> listUsersCars() {
+		
+		List<Map<String, Object>> result = userDao.listUsersCars();
+		if (!result.isEmpty()) {
+			return result;
+		} else {
+			return null;
+		}
+	}
+
 	public void addUserToList(Users user) throws UsersException {
 		if (user == null) {
 			throw new UsersException("The passed object can not be null.");

@@ -7,6 +7,7 @@ public class Cars {
 	private String carModel;
 	private int horsepower;
 	private String carEngine;
+	private int owner;
 	
 	public Cars() {		
 	}
@@ -50,5 +51,13 @@ public class Cars {
 
 	public void setHorsepower(int horsepower) {
 		this.horsepower = horsepower;
+	}
+
+	public int getOwner() {
+		return owner;
+	}
+
+	public void setOwner(int owner) {
+		this.owner = owner;
 	}
 }
