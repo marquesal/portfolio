@@ -1,12 +1,20 @@
 package com.cars.model;
 
-public class Cars {
+import javax.persistence.*;
 
+@Entity
+public class Cars {
+	@Id
+    @GeneratedValue
 	private int id;
+	
 	private String carBrand;
 	private String carModel;
 	private int horsepower;
 	private String carEngine;
+	
+	@ManyToOne
+    @JoinColumn(name="library_id")
 	private int owner;
 	
 	public Cars() {		

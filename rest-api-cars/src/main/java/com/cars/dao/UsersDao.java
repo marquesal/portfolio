@@ -20,4 +20,6 @@ public interface UsersDao {
 	
 	List<Map<String, Object>> listUsersCars();
 
+	List<Map<String, Object>> listOwnedCars(int id);
+
 }

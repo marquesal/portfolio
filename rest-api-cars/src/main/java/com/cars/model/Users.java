@@ -1,11 +1,23 @@
 package com.cars.model;
 
-public class Users {
+import java.util.List;
+import java.util.Map;
 
+import javax.persistence.*;
+
+@Entity
+public class Users {
+	
+	@Id
+    @GeneratedValue
 	private int id;
+	
 	private String name;
 	private int age;
 	private String address;
+	
+	@OneToMany(mappedBy = "Users")
+	private List<Map<String,Cars>> listOwnedCars; 
 	
 	public Users() {		
 	}
@@ -40,6 +52,14 @@ public class Users {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public List<Map<String,Cars>> getListOwnedCars() {
+		return listOwnedCars;
+	}
+
+	public void setListOwnedCars(List<Map<String,Cars>> listOwnedCars) {
+		this.listOwnedCars = listOwnedCars;
 	}
 
 }

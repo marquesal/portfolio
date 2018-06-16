@@ -61,4 +61,11 @@ public class UsersDaoImpl extends JdbcDaoSupport implements UsersDao {
 		String sql = "select * from users inner join cars on users.id = cars.fk_users";
 		return getJdbcTemplate().queryForList(sql);
 	}
+
+	@Override
+	public List<Map<String, Object>> listOwnedCars(int id) {
+		String sql = "select * from cars where cars.fk_users = ?";
+		Object[] args = new Object[] {id};
+		return getJdbcTemplate().queryForList(sql,args);
+	}
 }

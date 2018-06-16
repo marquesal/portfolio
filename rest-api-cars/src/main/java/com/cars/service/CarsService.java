@@ -41,18 +41,18 @@ public class CarsService {
 			}
 	}
 
-	public void addCarToList(Cars muscleCar) throws CarsException {
-		if (muscleCar == null) {
+	public void addCarToList(Cars car) throws CarsException {
+		if (car == null) {
 			throw new CarsException("The passed object can not be null.");
 		}
-		carDao.addCarToList(muscleCar);
+		carDao.addCarToList(car);
 	}
 
-	public void updateCarFromList(int id, Cars muscleCar) {
-		if ( id <= 0 && muscleCar == null) {
+	public void updateCarFromList(int id, Cars car) {
+		if ( id <= 0 && car == null) {
 			throw new IllegalArgumentException("The passed object can not be null.");
 		}
-		carDao.updateCarFromList(id, muscleCar);
+		carDao.updateCarFromList(id, car);
 	}
 
 }

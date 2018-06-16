@@ -42,8 +42,19 @@ public class UserResource {
 		}
 	}
 
+	@RequestMapping(value = "/user/cars/{id}", method = RequestMethod.GET)
+	public ResponseEntity<List<Map<String, Object>>> listOwnedCars(@PathVariable("id") int id) {
+		
+		try {
+			List<Map<String, Object>> result = userService.listOwnedCars(id);
+			return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (IllegalStateException e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}
+	}
+
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Users> getMuscleUser(@PathVariable("id") int id) {
+	public ResponseEntity<Users> getUser(@PathVariable("id") int id) {
 
 		try {
 			Users user = userService.getUser(id);
@@ -60,7 +71,7 @@ public class UserResource {
 	}
 
 	@RequestMapping(value = "/users/delete/{id}", method = RequestMethod.DELETE)
-	public String deleteMuscleUser(@PathVariable("id") int id) {
+	public String deleteUser(@PathVariable("id") int id) {
 
 		try {
 			userService.removeUserFromList(id);
