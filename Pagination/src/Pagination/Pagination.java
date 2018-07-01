@@ -2,18 +2,18 @@ package Pagination;
 
 public class Pagination {
 	
-	public static void main(String[] args) {
-		
-		Footer footer = new Footer();
-		
-		footer.setArguments(args);
-		
+	public static Footer footer = new Footer();
+
+	public static void main(String[] args) {		
+
+		footer.setArgs(args);
+
 		if (footer.testInput()) {
-			System.out.println("Please insert 4 numeric params:");
+			System.out.print(footer.generatefooter());
+		} else {
+			System.out.println("Please insert the following 4 numbers as arguments");
 			System.out.print("Current_page Total_pages Boundaries Around");		
-		} else 
-			
-		System.out.print(footer.generatefooter());
+		}
 
 	}
 
